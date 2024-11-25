@@ -12,9 +12,9 @@
 
 ## Структура проекта
 ```
-hw3/
-├── config_parser.py       # Основной парсер
-├── test_config_parser.py  # Модульные тесты
+HW3/
+├── config3.py       # Основной парсер
+├── tests_config3.py  # Модульные тесты
 ├── examples/             # Примеры конфигураций
 │   ├── example1_config.txt
 │   ├── example2_config.txt
@@ -30,12 +30,12 @@ python HW3/config3.py <input_file> <output_file>
 
 Например:
 ```sh
-python HW3/config3.py HW3/examples/nested_config.txt HW3/output.toml
+python HW3/config3.py HW3/example/config1_example.txt HW3/output.toml
 ```
 
 ### Запуск тестов
 ```sh
-python -m unittest HW3/tests3_config.py
+python -m unittest HW3/tests_config3.py
 ```
 
 ## Примеры конфигураций
