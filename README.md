@@ -19,7 +19,7 @@
 ## Парсинг конфигурационного файла и запись в TOML
 Перейдите в корневой каталог проекта Конфигурационное управление и выполните следующую команду:
 ```sh
-python HW3/config_parser.py HW3/example_config.txt HW3/output.toml
+python HW3/config3.py HW3/example_config.txt HW3/output.toml
 ```
 
 ## Запуск тестов
