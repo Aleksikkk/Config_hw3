@@ -1,0 +1,8 @@
+[vm]
+ip = [ 192.0, 168.0, 44.0, 44.0,]
+memory = 1024.0
+[[vm.syncedfolders]]
+hostpath = 126.0
+guestpath = 4524.0
+type = 178.0
+
