@@ -13,9 +13,11 @@
 ## Структура проекта
 ```
 HW3/
-├── translator.py          # Основной парсер
-├── tests_translator.py    # Модульные тесты            
-└── test.toml         # Выходной TOML файл
+├── config3.py          # Основной парсер
+├── tests_config3.py    # Модульные тесты            
+├── example1_config.txt # Пример конфигурации 1
+├── example2_config.txt # Пример конфигурации 2
+└── output.toml         # Выходной TOML файл
 ```
 
 ## Использование
