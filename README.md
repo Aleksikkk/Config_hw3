@@ -13,28 +13,27 @@
 ## Структура проекта
 ```
 HW3/
-├── config3.py          # Основной парсер
-├── tests_config3.py    # Модульные тесты            
-├── example1_config.txt # Пример конфигурации 1
-├── example2_config.txt # Пример конфигурации 2
-└── output.toml         # Выходной TOML файл
+├── translator.py         # Основной парсер
+├── tests_translator.py   # Модульные тесты            
+├── input.conf   # Входная конфигурация
+└── output.toml   # Выходной TOML файл
 ```
 
 ## Использование
 
 ### Парсинг конфигурационного файла
 ```sh
-python HW3/config3.py <input_file> <output_file>
+python .\translator.py <input_file> <output_file>
 ```
 
 Например:
 ```sh
-python HW3/config3.py HW3/example/config1_example.txt HW3/output.toml
+python .\translator.py input.conf output.toml
 ```
 
 ### Запуск тестов
 ```sh
-python -m unittest HW3/tests_config3.py
+python -m unittest tests_translator.py
 ```
 
 ## Примеры конфигураций
@@ -42,44 +41,50 @@ python -m unittest HW3/tests_config3.py
 ### Конфигурация для сетевых настроек
 ```
 ' Это конфигурация для сетевых настроек
-var port 8080;
-var timeout 30;
-var max_connections 100;
-var server_name "example.com";
-
 ' Это однострочный комментарий
-
-#( "192.168.1.1", "192.168.1.2", "192.168.1.3" )
-
-table([
-    ip = "192.168.1.1",
-    mask = "255.255.255.0",
-    gateway = "192.168.1.254"
-])
-
-var new_port @{+ port 1};
-var new_timeout @{- timeout 5};
-var new_max_connections @{* max_connections 2};
-var min_value @{min port timeout};
-var max_value @{max port max_connections};ы
-```
-
-### Конфигурация для мониторинга системы
-```
-var monitoring_service "HealthCheckService";
-var check_interval 5;  # in minutes
-
-table([
-    endpoints = #("http://localhost:8080/health", "http://localhost:8080/status"),
+var = table([
+    endpoints = #(6447, 145,),
     notifications = table([
-        email = "admin@example.com",
-        sms = "1234567890",
-        alert_threshold = @{ + check_interval 10 }
+        email = 123,
+        sms = 1234567890,
+        alertthreshold = 15,
     ]),
     status = table([
-        last_check = "2023-10-01T12:00:00Z",
-        is_up = true,
-        response_time = @{ max 200 150 }
-    ])
-])
+        lastcheck = 2024,
+        isup = 1,
+        responsetime = 150,
+    ]),
+]),
 ```
+
+### Конфигурация для сетевых ностроек 2
+```
+' Это конфигурация для сетевых настроек
+' Это однострочный комментарий
+
+var x 10;
+var y 20;
+
+values = #(1, 2, 3, 4, 5,),
+
+settings = table([
+    version = 10,
+]),
+
+var = table([
+    endpoints = #(6447, 145,),
+    notifications = table([
+        email = 123,
+        sms = 1234567890,
+        alertthreshold = 15,
+    ]),
+    status = table([
+        lastcheck = 2024,
+        isup = 1,
+        responsetime = 150,
+    ]),
+]),
+result = @{+ x y},
+resultt = @{+ x @{* x result}},
+```
+
